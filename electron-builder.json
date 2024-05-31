@@ -1,0 +1,64 @@
+{
+    "productName": "iMinRemoteExe",
+    "appId": "cn.imin.remote",
+    "asar": true,
+    "directories": {
+        "output": "release/1.0.0"
+    },
+    "files": [
+        "electron/**/*",
+        "dist/**/*"
+    ],
+    "electronDownload": {
+        "mirror": "https://npmmirror.com/mirrors/electron/"
+    },
+    "mac": {
+        "artifactName": "iMinRemoteExe_1.0.1.${ext}",
+        "icon": "build/icons/icon.icns",
+        "target": [
+            "dmg"
+        ]
+    },
+    "dmg": {
+        "contents": [
+          {
+            "x": 410,
+            "y": 150,
+            "type": "link",
+            "path": "/Applications"
+          },
+          {
+            "x": 130,
+            "y": 150,
+            "type": "file"
+          }
+        ]
+      },
+    "win": {
+        "target": [
+            {
+                "target": "nsis",
+                "arch": [
+                    "x64"
+                ]
+            }
+        ],
+        "icon": "build/icons/icon.icns",
+        "artifactName": "iMinRemoteExe_1.0.1.${ext}"
+    },
+    "publish": {
+        "provider": "generic",
+        "url": "https://yiminoss.neostra.com/web/yimin/exe/"
+        },
+    "nsis": {
+        "oneClick": false, 
+        "guid": "iMinRemoteExe", 
+        "perMachine": true, 
+        "allowElevation": true,
+        "allowToChangeInstallationDirectory": true,
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true,
+        "shortcutName": "iMinRemoteExe",
+        "include": "electron/register.nsh"
+    }
+}

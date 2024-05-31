@@ -1,0 +1,43 @@
+{
+  "name": "iminremote",
+  "version": "1.0.1",
+  "description": "electron vite vue2 demo",
+  "keywords": [
+    "electron",
+    "vite",
+    "vue2",
+    "vue",
+    "vue devtools",
+    "electron-vue",
+    "electron-vite"
+  ],
+  "main": "electron/index.js",
+  "scripts": {
+    "exe": "npm run build && electron-builder",
+    "dev": "vite",
+    "dev:el": "cross-env NODE_ENV=development electron .",
+    "build": "vite build",
+    "preview": "vite preview",
+    "app": "wait-on tcp:3000 &&  npm run dev:el"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^17.2.0",
+    "electron-builder": "^22.14.13",
+    "sass": "^1.49.9",
+    "vite": "^2.8.0",
+    "wait-on": "^6.0.1"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.9",
+    "iview": "^3.5.4",
+    "vite-plugin-vue2": "^1.9.3",
+    "vue": "^2.6.14",
+    "vue-router": "3.0.1",
+    "vue-template-compiler": "^2.6.14",
+    "vuex": "3.0.1"
+  },
+  "author": "",
+  "license": "MIT"
+}
